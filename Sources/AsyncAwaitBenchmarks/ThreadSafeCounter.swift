@@ -2,7 +2,7 @@ import Foundation
 
 class ThreadSafeCounter {
     private var count = 0
-    private let queue = DispatchQueue(label: "serial.queue.avm")
+    private let queue = DispatchQueue(label: "ru.avito.serial.queue")
     
     func increment() {
         queue.async {

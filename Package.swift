@@ -7,15 +7,17 @@ let package = Package(
     name: "AsyncAwaitBenchmarks" ,
     platforms: [.macOS(.v12), .iOS(.v13)],
     products: [
-        .executable(name: "Benchmarks", targets: ["Benchmarks"])
+        .executable(name: "AsyncAwaitBenchmarks", targets: ["AsyncAwaitBenchmarks"]),
+        .library(name: "Example", targets: ["Example"])
     ],
     dependencies: [
       .package(url: "https://github.com/google/swift-benchmark", from: "0.1.0")
     ],
     targets: [
         .executableTarget(
-            name: "Benchmarks",
+            name: "AsyncAwaitBenchmarks",
             dependencies: [.product(name: "Benchmark", package: "swift-benchmark")]
-        )
+        ),
+        .target(name: "Example")
     ]
 )
